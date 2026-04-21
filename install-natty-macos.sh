@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Put your GitHub repo here before sharing this installer.
-REPO_URL="https://github.com/your-name/your-repo.git"
+REPO_URL="https://github.com/nt3y/lcu"
 REPO_BRANCH="main"
 INSTALL_DIR="$HOME/Natty"
 
