@@ -82,6 +82,38 @@
           </p>
         </section>
 
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Image To ASCII</h2>
+            <span class="badge">Browser-side</span>
+          </div>
+
+          <label class="field-label" for="imageInput">Upload an image</label>
+          <input id="imageInput" type="file" accept="image/*" />
+
+          <div class="ascii-controls">
+            <label class="field-label" for="asciiWidth">ASCII width</label>
+            <input id="asciiWidth" type="range" min="24" max="120" value="56" />
+            <p id="asciiWidthValue" class="muted">56 characters wide</p>
+          </div>
+
+          <div class="button-row">
+            <button id="convertImageButton" class="primary-button">Convert Image</button>
+            <button id="useAsciiButton" class="ghost-button">Use In Status</button>
+          </div>
+
+          <label class="field-label" for="asciiOutput">ASCII output</label>
+          <textarea
+            id="asciiOutput"
+            rows="10"
+            readonly
+            placeholder="Upload an image, then convert it to ASCII here..."
+          ></textarea>
+          <p class="muted">
+            Smaller images and lower widths usually work best for profile-status text limits.
+          </p>
+        </section>
+
         <section class="panel panel-note">
           <div class="panel-head">
             <h2>Notes</h2>
