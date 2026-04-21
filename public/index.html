@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natty</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">League Client Local UI</p>
+          <h1>Natty</h1>
+          <p class="hero-copy">
+            A clean local browser dashboard for your League Client. See your game name, friend
+            count, and push a custom status with ASCII, emojis, or a fullwidth preview.
+          </p>
+        </div>
+        <button id="refreshButton" class="ghost-button">Refresh Data</button>
+      </header>
+
+      <main class="dashboard">
+        <section class="panel panel-highlight">
+          <div class="panel-head">
+            <h2>Client Snapshot</h2>
+            <span id="connectionBadge" class="badge badge-muted">Checking...</span>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span class="stat-label">Game Name</span>
+              <strong id="gameNameValue">-</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Tag</span>
+              <strong id="tagLineValue">-</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Friends</span>
+              <strong id="friendsValue">-</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Status</span>
+              <strong id="availabilityValue">-</strong>
+            </article>
+          </div>
+          <p id="statusMessagePreview" class="status-preview">No status loaded yet.</p>
+          <p id="lockfileHint" class="muted"></p>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Custom Status</h2>
+            <span class="badge">Local only</span>
+          </div>
+
+          <label class="field-label" for="statusInput">Write your profile status</label>
+          <textarea
+            id="statusInput"
+            rows="5"
+            placeholder="Type ASCII, emojis, or a custom message here..."
+          ></textarea>
+
+          <div class="button-row">
+            <button id="applyButton" class="primary-button">Apply Status</button>
+            <button id="previewButton" class="ghost-button">Make It Look Bigger</button>
+            <button id="copyPreviewButton" class="ghost-button">Copy Preview</button>
+          </div>
+
+          <div class="preset-row">
+            <button class="chip" data-preset="Grinding ranked | (ง'̀-'́)ง">Ranked</button>
+            <button class="chip" data-preset="Chill queue ✨">Chill</button>
+            <button class="chip" data-preset="Ｎａｔｔｙ　Ｍｏｄｅ">Fullwidth</button>
+            <button class="chip" data-preset="┏(＾0＾)┛ Duo me maybe">ASCII</button>
+          </div>
+
+          <label class="field-label" for="previewOutput">Fullwidth preview</label>
+          <textarea id="previewOutput" rows="5" readonly></textarea>
+          <p class="muted">
+            Fullwidth text often looks visually larger in chat-style UIs, but League decides the
+            final rendering.
+          </p>
+        </section>
+
+        <section class="panel panel-note">
+          <div class="panel-head">
+            <h2>Notes</h2>
+          </div>
+          <ul class="notes-list">
+            <li>Open the League client before using Natty.</li>
+            <li>Natty reads the local League lockfile on your Mac to connect securely.</li>
+            <li>You can override the lockfile path with the `LEAGUE_LOCKFILE` environment variable.</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
